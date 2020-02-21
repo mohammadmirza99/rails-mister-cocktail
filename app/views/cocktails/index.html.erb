@@ -1,0 +1,35 @@
+
+<div class="banner-container">
+  <div class="jumbotron banner" >
+    <h1 class="display-4">Cocktails</h1>
+    <p class="lead">Your favourite drinks in one place</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to "Add New Cocktail", new_cocktail_path %>
+  <ul class="row">
+
+    <% @cocktails.each do |cocktail| %>
+      <li class = "column m-3">
+        <div class="card" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" height="300px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= cocktail.name%></h5>
+            <p class="card-text"><% cocktail.doses.each do |dose|%>
+                <%= dose.description %> <%= dose.ingredient.name %>
+               <%end  %>
+            </p>
+            <%= button_to 'Learn More', cocktail_path(cocktail.id), method: :get%>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>-09
