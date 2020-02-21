@@ -12,7 +12,8 @@
 
   <div class="text-center">
     <h1> <%=@cocktail.name  %></h1>
-
+    <%= cl_image_tag("xDJgJPLT5v3ZuJeYgCcBmPKc",
+          width: 400, height: 300, crop: :fill) %>
 
     <% @cocktail.doses.each do |dose| %>
           <p><%= dose.description %> <%= dose.ingredient.name %></p>
