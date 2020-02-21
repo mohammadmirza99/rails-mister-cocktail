@@ -6,10 +6,8 @@
   </div>
 </div>
 
-<div class="container">
-  <%= link_to "Add New Cocktail", new_cocktail_path %>
+<div class="container text-center p-3">
   <ul class="row">
-
     <% @cocktails.each do |cocktail| %>
       <li class = "column m-3">
         <div class="card" style="width: 18rem;">
@@ -20,7 +18,7 @@
                 <%= dose.description %> <%= dose.ingredient.name %>
                <%end  %>
             </p>
-            <%= button_to 'Learn More', cocktail_path(cocktail.id), method: :get%>
+            <%= button_to 'Learn More', cocktail_path(cocktail), method: :get%>
           </div>
         </div>
       </li>

@@ -13,6 +13,7 @@
   <div class="text-center">
     <h1> <%=@cocktail.name  %></h1>
 
+
     <% @cocktail.doses.each do |dose| %>
           <p><%= dose.description %> <%= dose.ingredient.name %></p>
           <%= link_to "Delete a dose", dose_path(dose.id), method: :delete %>
